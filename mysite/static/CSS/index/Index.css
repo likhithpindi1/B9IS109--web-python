@@ -1,0 +1,87 @@
+@import "./global.css";
+
+*,*::after,*::before{
+
+    margin:0;
+    padding:0;
+    box-sizing:inherit;
+
+}
+html{
+
+    font-size:62.5%;
+    box-sizing:border-box;
+}
+body{
+
+    margin:0;
+    padding:0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+   
+}
+body header{
+
+   
+  
+   
+    
+    
+}
+body header .menu
+ {
+
+        display:none;
+}
+body header .icon
+{
+
+
+    display: none;
+}
+body header .nav{
+   
+    height: 8rem;
+    display:flex;
+   justify-content: space-around;
+   align-items: center;
+   background-color:#161616;
+   
+   
+ 
+   
+
+}
+body header .nav .navItems{
+    font-size:1.5rem;
+   color: white;
+    margin-left:3rem; 
+    text-decoration: none;
+}
+.active
+{
+
+    background-color:palevioletred;
+    
+    padding:2rem;
+    color:white;
+}
+.cart_size
+{
+    color:white;
+    background-color:palevioletred;
+  
+}
+body  main .main-section{
+    width:100%;
+    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),url(/static/Images/Screenshot\ 2023-02-11\ 084832.png);
+    height: 86.8rem;
+   
+    
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+
+
+
+
+

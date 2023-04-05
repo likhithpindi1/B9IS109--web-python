@@ -1,0 +1,134 @@
+{% extends 'base.html' %} {% block content %}
+
+<section class="grid-section">
+  <div class="search">
+    <input
+      type="text"
+      class="input-search"
+      name="search"
+      id="search"
+      autocomplete="off"
+    />
+    <input
+      type="button"
+      class="search-buttion"
+      name="search_button"
+      value="search"
+      onclick="product_search()"
+    />
+  </div>
+  <div class="grid">
+    {% for i in view %}
+    <div class="grid-items item-{{i.id}}">
+      <img
+        class="item_image"
+        src="{{ i.item_img }}"
+        alt="image"
+        class="tea-item"
+      />
+      <!-- <p>{{i.id}}</p> -->
+      <p class="item_name_{{i.id}}">{{i.item_name}}</p>
+      <p><span class="item_price_{{i.id}}">{{i.price}}</span><span>$</span></p>
+      <button class="add-button" onclick="open_basket('{{i.id}}')">
+        Add to basket
+      </button>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="main-section">
+    <div class="position_for_basket">
+      <div class="onclick_button to_hide">
+        <div class="content_in_basket">
+          <h1 class="head_of_content">Product was added to shopping</h1>
+          <p class="to_close_basket">&times;</p>
+        </div>
+        <div class="content_of_item">
+          <img src="{{item.item_img}}" class="img_of_item" />
+          <input name="stock_id" id="stock_id" hidden />
+          <div class="name-price">
+            <div class="basket_item_name">
+              <h1 class="name_of_item">{{ item.item_name }}</h1>
+            </div>
+            <div class="basket_rate_qty">
+              <h1><span class="bucket_rate">0</span><span>$</span></h1>
+              <h1>X</h1>
+              <input type="number" id="quantity" class="quantity_of_item" />
+              <h1>=</h1>
+              <h1><span class="bucket_final_rate">0</span><span>$</span></h1>
+            </div>
+          </div>
+        </div>
+        <div class="continue_button">
+          <a href="{% url 'shop' %}" class="continue_to_shop common_button"
+            >Continue to shop</a
+          >
+          <a href="#" class="place_an_order common_button" onclick="addToCart()"
+            >add to cart</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="back_black to_hide"></div>
+  </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  function product_search() {
+    $(".grid").empty();
+    $.ajax({
+      url: "{% url 'search_products' %}",
+      method: "GET",
+      data: {
+        search: document.querySelector('[id = "search"]').value
+      },
+      caches: false,
+      success: function (data) {
+        for (var i = 0; i < data.length; i++) {
+          var product = data[i];
+          var itemHtml =
+            '<div class="grid-items item-' +
+            product.id +
+            '">' +
+            '<img src="' +
+            product.item_img +
+            '" alt="image" class="tea-item" />' +
+            "<p>" +
+            product.item_name +
+            "</p>" +
+            "<p>" +
+            product.price +
+            "</p>" +
+            '<button class="add-button">Add to basket</button>' +
+            "</div>";
+          $(".grid").append(itemHtml);
+        }
+      }
+    });
+  }
+</script>
+<script>
+  function addToCart(){
+    $.ajax({
+      url: "{% url 'add_to_cart' %}",
+      method: "POST",
+      data: {
+        stock_id: $("#stock_id").val(),
+        quantity: $('#quantity').val(),
+        csrfmiddlewaretoken: "{{ csrf_token }}",
+      },
+      cache: false,
+      success: function (response) {
+        console.log(response);
+        if ("url" in response) {
+          window.location.href = response.url;
+          swal("Info", "Neededf to Login");
+        }
+        else{
+          close_basket()
+          swal("Success", "Produce Added To cart");
+        }
+      }
+    });
+  }
+</script>
+{% endblock %}

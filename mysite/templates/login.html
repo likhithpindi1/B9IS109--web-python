@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="main-section">
+  <section class="register-section">
+    <form action="" method="post" class="register-form">
+      {% csrf_token %}
+      <p class="register-head">Login</p>
+      <input
+        type="email"
+        value=""
+        class="register-input-4 common-input"
+        name="login_email"
+        placeholder="Email"
+        required
+      /><br />
+      <input
+        type="password"
+        value=""
+        class="register-input-5 common-input"
+        name="login_password"
+        placeholder="Password"
+        required
+      /><br />
+      {% if messages %} {% for message in messages %}
+      <h1 class="error">{{ message }}</h1>
+      {% endfor %} {% endif %}
+
+      <button class="to-submit" type="submit">Login</button>
+      <div class="to_link">
+        <p>Dont Have Account ?</p>
+        <a href="{% url 'register'  %}" class="fb_link"
+          >Register</a
+        >
+      </div>
+    </form>
+  </section>
+</div>
+
+{% endblock %}

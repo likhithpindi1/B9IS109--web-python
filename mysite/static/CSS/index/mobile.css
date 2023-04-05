@@ -1,0 +1,23 @@
+@import "./global.css";
+body .header{
+    
+    height: 5rem;
+    background-color: white;
+
+}
+body header .hidden
+{
+
+visibility: hidden;
+
+}
+body header .nav{
+
+    display: none;
+
+}
+body header .nav:hover{
+
+    background-color: blueviolet;
+
+}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="main-section">
+  <section class="profile">
+    <div class="details">
+      <h1 class="user_details">User Details</h1>
+      <p class="user_info">First Name:&nbsp;&nbsp;&nbsp; {{data.First_Name}}</p>
+      <p class="user_info">Last Name:&nbsp;&nbsp;&nbsp; {{data.last_Name}}</p>
+      <p class="user_info">
+        Phone Number:&nbsp;&nbsp;&nbsp;{{data.phone_number}}
+      </p>
+      <p class="user_info">Email Id:&nbsp;&nbsp;&nbsp; {{data.Email_ID}}</p>
+    </div>
+  </section>
+</div>
+{% endblock %}

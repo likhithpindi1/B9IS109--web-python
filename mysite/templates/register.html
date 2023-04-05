@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="main-section">
+  <section class="register-section">
+    <form action="#" method="post" class="register-form" autocomplete="off">
+      {% csrf_token %}
+      <p class="register-head">Register</p>
+      <input
+        type="text"
+        value=""
+        class="register-input-1 common-input"
+        name="first_name"
+        placeholder="First Name"
+        required
+      /><br />
+      <input
+        type="text"
+        value=""
+        class="register-input-2 common-input"
+        name="last_name"
+        placeholder="Last Name"
+        required
+      /><br />
+      <input
+        type="phone"
+        value=""
+        class="register-input-3 common-input"
+        name="phone_number"
+        placeholder="Phone"
+        required
+      /><br />
+      <input
+        type="email"
+        value=""
+        class="register-input-4 common-input"
+        name="email"
+        placeholder="Email"
+        required
+      /><br />
+      <input
+        type="password"
+        value=""
+        class="register-input-5 common-input"
+        name="password"
+        placeholder="Password"
+        required
+      /><br />
+      <button class="to-submit" type="submit">Register</button>
+      <div class="to_link">
+        <p>Already Registered ?</p>
+        <a href="{% url 'login'  %}" class="fb_link"
+          >Login</a
+        >
+      </div>
+    </form>
+  </section>
+</div>
+{% endblock %}

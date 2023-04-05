@@ -1,0 +1,185 @@
+*,*::after,*::before{
+
+    margin:0;
+    padding:0;
+    box-sizing:inherit;
+
+}
+html{
+
+    font-size:62.5%;
+    box-sizing:border-box;
+}
+body{
+
+    margin:0;
+    padding:0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+   
+}
+body header{
+
+    
+position: relative;
+position: sticky;
+top: 0;
+z-index: 1;
+
+   
+    
+    
+}
+body header .menu
+{
+    
+    position:absolute;
+    top:5rem;
+    display: inline-block;
+    width:15rem;
+    height: 53rem;
+    background-color: white;
+    border: 0.1rem solid black;
+    font-size: 2rem;
+
+}
+body header .menu .menuitem{
+display: inline-block;
+margin-bottom: 1rem;
+padding: 2.2rem;
+
+width:14.9rem;
+height: 8rem;
+text-decoration: none;
+
+
+
+
+}
+body header .menu .menuitem:hover{
+
+background-color: blanchedalmond;
+
+}
+
+body header .icon
+{
+    
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    width:5rem;
+    border:1px solid white;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    
+   
+
+
+}
+body header .icon:hover
+{
+   background-color: blueviolet;
+}
+body header .icon .line
+{       
+       
+        margin-left: 0.3rem;
+        margin-bottom:0.2rem;
+        max-width:calc(100% - 10px);
+        border: 0.3rem solid black;
+
+
+}
+
+
+
+
+body header .nav{
+
+        
+    height: 8rem;
+    display:flex;
+   justify-content: space-around;
+   align-items: center;
+   background-color:#161616;
+   
+ 
+   
+
+}
+
+body header .nav .navItems{
+    font-size:1.2rem;
+   color: white;
+    margin-left:3rem;
+    text-decoration: none;
+}
+.cart_button
+{
+    height:2rem;
+    width:4rem;
+    fill:white;
+    background-color: white;
+    border: solid 0.1rem white;
+
+}
+body  main .main-section{
+    position: relative;
+    width:100%;
+    background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.9)),url(https://lh3.googleusercontent.com/p/AF1QipNbfsAXC1QC6ufXdi0azr7Q7ya7yt3ui9-HkhZj=s1360-w1360-h1020);
+    height: 86.8rem;
+   
+    
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+.welcome-page
+{
+    text-align: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color:white;
+    
+
+}
+.welcome-head
+{
+    background-color: black;
+}
+.to_shop_here
+{
+ display: inline-block;
+ text-decoration: none;
+ padding:2rem;
+ background-color: black;
+ color:white;
+ margin-top: 3rem;
+border-radius: 2rem;
+}
+
+.to_shop_here:hover{
+
+    color:black;
+    background-color:white;
+
+}
+body .footer
+{
+   height: 10rem;
+   width:100%;
+   background-color: white;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   font-size: 1.2rem;
+}
+body .footer .none
+{
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block content %}
+
+<section class="cart_page">
+  <div class="cart_content">
+    <div class="shop_content">
+      <p class="shopping_cart">shopping cart</p>
+      <a href="{% url 'shop' %}" class="to_continue_shopping"
+        >Continue shopping</a
+      >
+      <a href="{% url 'order_placed' %}" class="to_continue_shopping"
+        >Place Order</a
+      >
+    </div>
+  </div>
+  <table class="table_form">
+    <tr>
+      <th class="name">Name</th>
+      <th class="gross">Price</th>
+      <th class="quantity">Quantity</th>
+      <th class="total">Rate</th>
+      <th class="to_delete_item">Action</th>
+    </tr>
+
+    <tbody>
+      {% for i in products %}
+      <tr class="row_item">
+        <td class="selected_items">
+          <div class="cart_desc">
+            <img src="{{ i.product.item_img }}" class="img_item" />
+            <div class="item_name_cart">
+              <span class="item_names">{{i.product.item_name}}</span>
+            </div>
+          </div>
+        </td>
+        <td class="selected">{{i.product.price}}$</td>
+        <td class="selected">{{i.quantaty}}</td>
+        <td class="selected">{{i.amount}}$</td>
+        <td class="selected">
+          <form action="{% url 'delete_item' i.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete" class="delete_seleted_item" />
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="total_value">
+    <div class="total_qty">Total Qty : <b>{{total_items}}</b></div>
+    <div class="total_amount">Total Amount : <b>{{total_cart}} $</b></div>
+  </div>
+</section>
+<script>
+  function submitCart() {
+    swal(
+      "Invoice Submitted",
+      "Further Information forwaded to Mail Id",
+      "success"
+    );
+  }
+</script>
+{% endblock %}

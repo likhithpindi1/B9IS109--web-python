@@ -1,0 +1,83 @@
+.register-section
+{
+    position: relative;
+    height:100rem;
+    
+    background-image: linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.8));
+    
+}
+.register-form
+{
+    background-color: white;
+    position:absolute;
+    top:50%;
+    left:50%;
+    text-align: center;
+    height:70rem;
+    width:40rem;
+    border-radius: 2rem;
+    padding:5rem;    
+    transform: translate(-50%, -50%);
+}
+.register-head
+{
+
+font-size:2.5rem;
+margin-bottom:4rem;
+font-weight: 2rem;
+}
+.common-input
+{
+
+    margin-bottom: 2rem;
+    padding: 2rem;
+    width: 23rem;
+
+}
+.error
+{
+    color:red;
+    margin-bottom: 2rem;
+    
+
+
+}
+.to-submit
+{
+
+    padding:1.2rem;
+    border-radius: 3rem;
+    width:7rem;
+    background-color: green;
+    border: 0;
+    font-size: 1rem;
+    
+}
+.to-submit:hover{
+
+    cursor:pointer;
+    background-color: white;
+    border: 0.1rem solid black;
+}
+.fb_link
+{
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 1.4rem;
+    padding:1.2rem;
+    background-color: green;
+    font-size: 1rem;
+    color: black;
+    border-radius: 4rem;
+    
+    margin-top: 3rem;
+}
+.fb_link:hover{
+
+    cursor:pointer;
+    background-color: white;
+    border: 0.1rem solid black;
+    
+    
+    
+}
