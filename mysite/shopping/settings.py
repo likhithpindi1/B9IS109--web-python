@@ -22,7 +22,7 @@ keys = JsonData()
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8#rdet5kv8t1)%_pgn%c)1-3j0=ld(_^f!3zjr99q5doi-8p!6'
+SECRET_KEY = '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'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

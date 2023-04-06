@@ -15,8 +15,8 @@ keys = JsonData()
 
 def send_email(mail_id):
     
-    api_key = keys.getMailJet()['Key']
-    api_secret = keys.getMailJet()['SecretCode']
+    api_key = '8f8712eb95d7b138982dfe924b04b6b4'
+    api_secret = "dca61de169c6db0981806ac9898a91c1"
     
     mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
