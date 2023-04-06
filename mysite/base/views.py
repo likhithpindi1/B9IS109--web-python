@@ -35,7 +35,7 @@ def send_email(mail_id):
                 ],
                 "Subject": "Details Regarding Your Order",
                 "TextPart": "Greetings from Strandfield!",
-                "HTMLPart": "<h3>Thank for Shopping with strandfield  <a href=\"https://www.mailjet.com/\"></a>!</h3><br />May the delivery force be with you!"
+                "HTMLPart": "<h3>Thank for Shopping with strandfield  <a href=\"https://www.mailjet.com/\">Mailjet</a>!</h3><br />May the delivery force be with you!"
             }
         ]
     }
@@ -74,101 +74,7 @@ def logout_page(request):
 
 
 def home(request):
-    items_name = products_names.objects.all()
-    if len(items_name) == 0:
-        data = {
-            'items': [
-                {"name": "Basmati Rice 20kg Garimaa Shahi", "price": '25.00',
-                 'img': """/media/img/2023/03/11/large_4f4bfbad4a3f9c4bf9726ff5890a-1-removebg-preview.png"""},
-                {"name": "White sesame seeds 1 KG", "price": '27.00',
-                 'img': """/media/img/2023/03/11/large_sesame-leves.jpg"""},
-                {"name": "Toor Daal  2 KG TRS", "price": '32.00',
-                 'img': """/media/img/2023/03/11/large_sam-1109-copy.jpg"""},
-                {"name": "Tamarind - 400g", "price": '12.00',
-                 'img': """/media/img/2023/03/11/large_IMG-3992.jpg"""},
-
-                {"name": "Spicebox 9", "price": '120.00',
-                 'img': """/media/img/2023/03/11/large_s-s-masala-peti-500x500.jpg"""},
-                {"name": "Ryż Basmati Super JAISAL 5kg", "price": '15.00',
-                 'img': """/media/img/2023/03/11/large_jaisal03.jpg"""},
-                {"name": "Rice Basmati Exotic/Dubar INDIA GATE 10kg", "price": '105.00',
-                 'img': """/media/img/2023/03/11/large_indiagate-exotic-rice-5kg-little-india.jpg"""},
-                {"name": "Ryż Basmati Extra Long Premium 10 kg", "price": '150.00',
-                 'img': """/media/img/2023/03/11/large_WhatsApp-Image-2022-11-09-at-6-11-08-PM.jpeg"""},
-
-                {"name": "Monaco Jeffs Zeera Biscuits 200G Parle", "price": '5.00',
-                 'img': """/media/img/2023/03/11/large_Parle-Jeff-Jeera-Sixer-Cookies-SDL100973706-2-3795a.jpg"""},
-                {"name": "Soft Crunch Toast 350G Pran", "price": '15.00',
-                 'img': """/media/img/2023/03/11/large_9-3.jpg"""},
-                {"name": "Sat Isabgol  100G Pran", "price": '5.00',
-                 'img': """/media/img/2023/03/11/large_Sat-Isabgol-100G-Pran.jpeg"""},
-                {"name": "Hot Oil Hair Mask- Blackseed 500g Vatika", "price": '20.00',
-                 'img': """/media/img/2023/03/11//large_vatika-blackseed-multivitamin-hair-mask-grande.png"""},
-
-
-                {"name": "Blackseed Multivitamin+ Hair Oil 200ml Vatika Dabur", "price": '19.00',
-                 'img': """/media/img/2023/03/11/large_vatika-naturals-blackseed-multivitamin-hair-oil-grande.png"""},
-                {"name": "Vatika Naturals Cactus Hair Oil 200ml", "price": '10.00',
-                 'img': """/media/img/2023/03/11/large_vatika-naturals-cactus-multivitamin-hair-oil-grande.png"""},
-                {"name": "Idiyappam Powder  500G Aachi", "price": '5.00',
-                 'img': """/media/img/2023/03/11/large_Kozhukattai-1000x1000.png"""},
-                {"name": "Saffola Masala oats,40g", "price": '3.00',
-                 'img': """/media/img/2023/03/11/large_Saffola-Masala-Oats-Classic-Masala40g..jpg"""},
-
-                {"name": "Rice Dosa Mix Aachi 1kg", "price": '12.00',
-                 'img': """/media/img/2023/03/11/large_Rice-dosa.jpg"""},
-                {"name": " Sugar Coated Fennel Seed 250G Little India",
-                 "price": '7.00',  'img': """/media/img/2023/03/11/large_moti.png"""},
-                {"name": "Vimal Pan Masala V-1Tobacco", "price": '80.00',
-                 'img': """/media/img/2023/03/11/large_Vimal.jpg"""},
-                {"name": "Vicco Vajradanti Tooth Powder 50g", "price": '2.00',
-                 'img': """/media/img/2023/03/11/large_Vicco-Proszek-do-Czyszczenia-Zebow-i-Dziasel-50g.jpg"""},
-
-                {"name": "Mint Chutney 190G Ashoka", "price": '5.00',
-                 'img': """/media/img/2023/03/11/large_Bez-nazwy.png"""},
-                {"name": "Schezwan Chutney (with olive oil) 190g Ashoka", "price": '5.00',
-                 'img': """/media/img/2023/03/11/large_landscape-white-bg-shadow-designify-29-.png"""},
-                {"name": "Samosa Chutney 410G Suhana", "price": '8.00',
-                 'img': """/media/img/2023/03/11/large_WhatsApp-Image-2021-05-09-at-13-00-54.jpeg"""},
-                {"name": "Sandwich Chutney 190G Ashoka", "price": '9.00',
-                 'img': """/media/img/2023/03/11/large_Bez-nazwy.png"""},
-
-                {"name": "Ridge Gourd Beerakaaya Chutney 100g Priya", "price": '4.00',
-                 'img': """/media/img/2023/03/11/large_61jgtbrcQHL-SX679-.jpg"""},
-                {"name": "Coconut milk - 12 x 400g", "price": '65.00',
-                 'img': """/media/img/2023/03/11/large_mleko-kokosowe.jpg"""},
-                {"name": "Pudina Chana 400g Little India", "price": '7.00',
-                 'img': """/media/img/2023/03/11/large_WhatsApp-Image-2022-07-29-at-15-35-19.jpeg"""},
-                {"name": "Tapioca Chips Classic Salt 160g A-1 Chips", "price": '3.00',
-                 'img': """/media/img/2023/03/11/large_Tapiaco-Chips-Classic-Salt.jpg"""},
-
-                {"name": "Tapioca Chips Salsa Masala 160g A-1 Chips", "price": '4.00',
-                 'img': """/media/img/2023/03/11/large_1069-12-2015-A1-chips-Tapioca-Chips-Salsa-Masala.jpg"""},
-                {"name": "Tapioca Chips Classic Salt 160g A-1 Chips", "price": '13.00',
-                 'img': """/media/img/2023/03/11/large_35-24a557aa-1963-4550-9d19-02c6f3ac2552-1-.png"""},
-                {"name": "Gentle Baby Wash HIMALAYA 200ml", "price": '20.00',
-                 'img': """/media/img/2023/03/11/large_Himalaya-Gentle-Baby-Wash-200ml.jpg"""},
-                {"name": "Vadu Mango Pickle Aachi 300g", "price": '10.00',
-                 'img': """/media/img/2023/03/11/large_pobrane.jpeg"""},
-
-                {"name": "Sweet Mango Pickle (with peeled) 500g Rasanand", "price": '7.00',
-                 'img': """/media/img/2023/03/11/large_portrait-white-bg-shadow-designify.png"""},
-                {"name": "Ahmed Mango Pickle in oil 330g/400g/1kg", "price": '19.00',
-                 'img': """/media/img/2023/03/11/large_big-Ahmed-Mangopickle.jpg"""},
-                {"name": "Pav Bhaji - 280g Ashoka", "price": '3.00',
-                 'img': """/media/img/2023/03/11/large_Bombay-Pav.jpg"""},
-                {"name": "Rajma Pulao 280G Ashoka", "price": '8.00',
-                 'img': """/media/img/2023/03/11/large_ashoka-rajma-pulao-1.jpg"""},
-            ],
-        }
-        length = len(data["items"])
-        for i in range(length):
-            items_insert = products_names.objects.create(
-                item_name=data['items'][i]['name'], price=data['items'][i]['price'], item_img=data['items'][i]['img'])
-            items_insert.save()
-    else:
-        print('already existed')
-    view = products_names.objects.all()
+    createDummyData()
     return render(request, "Index.html")
 
 
@@ -361,11 +267,6 @@ def createDummyData():
             items_insert = products_names.objects.create(
                 item_name=data['items'][i]['name'], price=data['items'][i]['price'], item_img=data['items'][i]['img'])
             items_insert.save()
-    else:
-        print('already existed')
-    view = products_names.objects.all()
-
-    return render(request,"shop.html", {'view': view})
 
 
 @login_required(login_url='login')

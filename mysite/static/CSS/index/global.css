@@ -65,7 +65,7 @@ body header .icon
 {
     
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height:100%;
     width:5rem;
     border:1px solid white;
