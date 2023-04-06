@@ -27,7 +27,6 @@ Flask==2.2.2
 Flask-Login==0.6.2
 Flask-SQLAlchemy==3.0.2
 greenlet==2.0.1
-heroku==0.1.4
 idna==3.4
 itsdangerous==2.1.2
 Jinja2==3.1.2
@@ -36,7 +35,6 @@ MarkupSafe==2.1.1
 mysqlclient==2.1.1
 numpy==1.24.2
 oauthlib==3.2.2
-pandas==1.5.3
 Pillow==9.4.0
 platformdirs==2.6.0
 pycparser==2.21
