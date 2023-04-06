@@ -5,12 +5,12 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from base.models import  products_names, User, Cart
-from utility import JsonData
+
 from django.db.models import Q, Sum, F
 from django.contrib.auth.decorators import login_required
 from mailjet_rest import Client
 
-keys = JsonData()
+
 
 
 def send_email(mail_id):
