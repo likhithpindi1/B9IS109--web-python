@@ -135,7 +135,7 @@ def orderPlaced(request):
     except BaseException as e:
         print(e)
         
-    messages.success(request, 'order placed sucessfully')
+    messages.success(request, 'Further Information forwaded to Mail Id')
     return redirect('home')
 
 
